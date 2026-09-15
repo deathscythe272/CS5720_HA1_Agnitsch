@@ -1,12 +1,12 @@
 # CS5720 Home Assignment 1 — Phased Roadmap
 
 This is the working plan for the assignment. Each phase says **what** you build,
-**why** it exists in the course, the **concepts** you need to be able to explain on
-video, the **code approach**, and a **done check**. Work the phases in order; each one
+**why** it exists in the course, the **concepts** you need to be able to explain, the
+**code approach**, and a **done check**. Work the phases in order; each one
 is a single notebook section and a single commit.
 
 Deliverables at the end: a GitHub repo (this folder), a README with your student
-info, commented code, saved charts, and a 2–3 minute demo video for Brightspace.
+info, commented code, and saved charts.
 
 ---
 
@@ -17,7 +17,7 @@ repo whose first commit is this scaffold.
 
 **Why:** The grader may run your code. A `requirements.txt` and a one-line run
 command in the README means it works on their machine, not just yours. Committing
-the skeleton first gives you an honest, incremental history to show in the video.
+the skeleton first gives you an honest, incremental history.
 
 **Steps**
 
@@ -78,13 +78,13 @@ an op changes it. Most beginner bugs in deep learning are shape bugs.
 
   So (1, 4) against (3, 2, 4): pad to (1, 1, 4), then 1→3, 1→2, 4=4. Result (3, 2, 4).
   The same (1, 4) tensor would **fail** against the original (4, 6) because 4 ≠ 6 on
-  the last axis. Say this in the video; it shows you understand the rule rather than
-  just running the code.
+  the last axis. Calling this out shows you understand the rule rather than just
+  running the code.
 
 **Code approach**
 
 ```python
-tf.random.set_seed(42)                 # reproducible for the video
+tf.random.set_seed(42)                 # reproducible runs
 t = tf.random.uniform((4, 6))
 print(tf.rank(t), t.shape)             # rank 2, (4, 6)
 r = tf.reshape(t, (2, 3, 4))
@@ -181,7 +181,6 @@ to `logs/fit/<timestamp>`, launch TensorBoard, and answer the three questions.
 
 **Why:** Printing loss to the console does not scale. TensorBoard is the standard
 tool for watching training live, comparing runs, and catching overfitting early.
-Showing it on screen is the most visual part of your video.
 
 **Concepts to be able to explain**
 
@@ -225,13 +224,12 @@ screenshots are saved, and the three answers are written in the notebook and REA
 
 ---
 
-## Phase 5 — README, comments, video, submission
+## Phase 5 — README, comments, submission
 
-**What:** Finish the README, pass over every code cell for comments, record the video,
-push, and submit on Brightspace.
+**What:** Finish the README, pass over every code cell for comments, push, and submit
+on Brightspace.
 
-**Why:** The rubric explicitly weights comments and the README. The video is where
-you prove the understanding, not just the output.
+**Why:** The rubric explicitly weights comments and the README.
 
 **README must contain:** name, student ID, course/section; one-paragraph summary; how
 to run (venv + `pip install -r requirements.txt` + open the notebook); a section per
@@ -242,19 +240,6 @@ explanation; the three TensorBoard answers.
 non-obvious line (reshape, perm, callback, validation_split) gets a short *why*, not a
 restatement of *what*.
 
-**Video script (target 2:30)**
-
-| Time | Show | Say |
-|---|---|---|
-| 0:00–0:15 | README top | Who you are, what the four tasks are. |
-| 0:15–0:45 | Task 1 cell + output | Rank vs shape, reshape vs transpose, the broadcasting rule and why (1,4) fits (3,2,4). |
-| 0:45–1:15 | Task 2 chart | Same prediction change, CCE moves far more than MSE, and why classifiers use CCE. |
-| 1:15–1:50 | Task 3 chart | One model, two optimizers, Adam converges faster and why (per-weight adaptive steps). |
-| 1:50–2:25 | TensorBoard in browser | Train vs val curves, where overfitting would show, what more epochs do. |
-| 2:25–2:40 | GitHub repo page | Commit history, README, done. |
-
-Record with OBS or Windows Game Bar (Win+G). Do a single dry run first.
-
 **Submission checklist**
 
 - [ ] Student info in README
@@ -263,7 +248,7 @@ Record with OBS or Windows Game Bar (Win+G). Do a single dry run first.
 - [ ] `logs/fit/` is git-ignored (large, regenerable) but the screenshots are committed
 - [ ] Every cell commented
 - [ ] Repo pushed; link opens in an incognito window
-- [ ] Video 2–3 minutes, uploaded with the link on Brightspace, before the deadline
+- [ ] Repo link submitted on Brightspace before the deadline
 
 ---
 
