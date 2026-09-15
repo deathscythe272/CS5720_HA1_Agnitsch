@@ -140,3 +140,10 @@ eventually memorise the training set. Validation accuracy plateaus near 98% and 
 reaches a minimum and then creeps upward as the model starts fitting noise. Extra epochs help until
 the validation curve turns, then hurt. The fixes are early stopping, regularisation such as dropout,
 or more data. The small gap already visible at epoch 5 is the start of that trend.
+
+## AI use
+
+I used Claude (Anthropic) as a helper on this assignment, not as a substitute for doing it.
+It helped me plan the work, structure the code, wordsmith the comments and README, and
+quality and error check the code. I ran everything myself on my own machine, and every number,
+chart, and screenshot in this repo comes from those runs.
